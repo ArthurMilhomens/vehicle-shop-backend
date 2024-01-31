@@ -22,4 +22,6 @@ model Vehicle {
   name  String
   brand String
   model String
+  image String
+  price Float
 }

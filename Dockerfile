@@ -3,7 +3,6 @@ FROM node
 WORKDIR /usr/app
 
 COPY package.json ./
-COPY --from=builder prisma ./prisma
 
 RUN npm install
 
