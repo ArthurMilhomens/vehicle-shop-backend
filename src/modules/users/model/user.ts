@@ -4,6 +4,11 @@ export interface User {
     password?: string;
 }
 
+export interface CreateUser {
+    email: string;
+    password: string;
+}
+
 export interface LoginUser {
     email: string;
     password: string;
