@@ -1,8 +1,6 @@
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "../../..";
 
 export async function deleteVehicle(vehicleId: string): Promise<void> {
-    const prisma = new PrismaClient();
-
     await prisma.vehicle.delete({
         where: { id: vehicleId },
     });
