@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import createError from 'http-errors';
 
-const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET || "";
 
 interface IAccessToken {
     signAccessToken(payload: any): Promise<unknown>;
@@ -10,6 +9,7 @@ interface IAccessToken {
 
 export class Token implements IAccessToken {
     signAccessToken(payload: any) {
+        const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET || "";
         return new Promise((resolve, reject) => {
             jwt.sign({ payload }, accessTokenSecret, {
             }, (err: any, token: any) => {
@@ -22,6 +22,7 @@ export class Token implements IAccessToken {
     }
 
     verifyAccessToken(token: any) {
+        const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET || "";
         return new Promise((resolve, reject) => {
             jwt.verify(token, accessTokenSecret, (err: any, payload: any) => {
                 if (err) {

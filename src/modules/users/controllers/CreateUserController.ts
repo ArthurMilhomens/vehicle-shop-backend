@@ -4,7 +4,7 @@ import { createUser } from "../repositories/CreateUserRepository";
 export async function createUserController(req: Request, res: Response) {
     const data = req.body;
 
-    const user = await createUser(data);
+    await createUser(data);
 
-    return res.status(201).json(user);
+    return res.status(201).send({ message: "Usuário cadastrado com sucesso!" });
 }
