@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts",
     "start:migrate": "prisma migrate deploy && npm run dev",
+    "start:migrate:prod": "prisma migrate deploy && node src/index.",
     "start" : "npm run start:migrate"
   },
   "author": "Arthur Milhomens de Oliveira",
