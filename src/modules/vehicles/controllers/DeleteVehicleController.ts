@@ -11,7 +11,7 @@ export async function deleteVehicleController(req: Request, res: Response) {
     const accessToken = req.headers['authorization'] ?? "";
     const verify: any = accessToken !== "" && await jwt.verifyAccessToken(accessToken);
 
-    if (!verify.paylaod || accessToken === "") {
+    if (!verify.payload || accessToken === "") {
         return res.status(403).send({ message: "Não autorizado."})
     }
 
@@ -21,8 +21,7 @@ export async function deleteVehicleController(req: Request, res: Response) {
         await deleteVehicle(vehicleAlreadyExists.id)
 
         return res.status(200).json({ message: "Veículo deletado." })
+    } else {
+        return res.status(404).json({ message: "Veículo não encontrado." })
     }
-
-    return res.status(404).json({ message: "Veículo não encontrado." })
 }
-

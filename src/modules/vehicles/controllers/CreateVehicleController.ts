@@ -10,7 +10,7 @@ export async function createVehicleController(req: Request, res: Response) {
     const accessToken = req.headers['authorization'] ?? "";
     const verify: any = accessToken !== "" && await jwt.verifyAccessToken(accessToken);
 
-    if (!verify.paylaod || accessToken === "") {
+    if (!verify.payload || accessToken === "") {
         return res.status(403).send({ message: "Não autorizado."})
     }
 

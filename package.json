@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts",
-    "start:migrate": "prisma migrate deploy && npm run dev"
+    "start:migrate": "prisma migrate deploy && npm run dev",
+    "start" : "npm run start:migrate"
   },
   "author": "Arthur Milhomens de Oliveira",
   "license": "ISC",
