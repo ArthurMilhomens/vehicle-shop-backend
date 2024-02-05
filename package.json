@@ -11,8 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts",
     "start:migrate": "prisma migrate deploy && npm run dev",
-    "start:migrate:prod": "prisma migrate deploy && node dist/index.cjs",
-    "start": "npm run start:migrate:prod",
+    "start:migrate:prod": "prisma migrate deploy",
+    "start": "node dist/index.cjs",
     "build": "tsup src"
   },
   "author": "Arthur Milhomens de Oliveira",
